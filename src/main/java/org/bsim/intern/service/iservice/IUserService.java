@@ -1,6 +1,5 @@
 package org.bsim.intern.service.iservice;
 
-import org.apache.catalina.User;
 import org.bsim.intern.shared.dto.UserDTO;
 
 import java.util.List;
