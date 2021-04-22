@@ -3,6 +3,7 @@ package org.bsim.intern.io.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "walletsTBL")
@@ -29,6 +30,9 @@ public class WalletsEntity implements Serializable {
     @JoinColumn(name = "userid")
     private UserEntity user;
 
+    @OneToMany(mappedBy = "walletsEntity")
+    private List<TransactionsEntity> transactionsEntity;
+
     public long getId() {
         return id;
     }
@@ -37,12 +41,12 @@ public class WalletsEntity implements Serializable {
         this.id = id;
     }
 
-    public String getWalletid() {
+    public String getWalletId() {
         return walletId;
     }
 
-    public void setWalletid(String walletid) {
-        this.walletId = walletid;
+    public void setWalletId(String walletId) {
+        this.walletId = walletId;
     }
 
     public String getName() {
@@ -61,12 +65,12 @@ public class WalletsEntity implements Serializable {
         this.balance = balance;
     }
 
-    public String getNohp() {
+    public String getNoHP() {
         return noHP;
     }
 
-    public void setNohp(String nohp) {
-        this.noHP = nohp;
+    public void setNoHP(String noHP) {
+        this.noHP = noHP;
     }
 
     public UserEntity getUser() {
@@ -75,5 +79,13 @@ public class WalletsEntity implements Serializable {
 
     public void setUser(UserEntity user) {
         this.user = user;
+    }
+
+    public List<TransactionsEntity> getTransactionsEntity() {
+        return transactionsEntity;
+    }
+
+    public void setTransactionsEntity(List<TransactionsEntity> transactionsEntity) {
+        this.transactionsEntity = transactionsEntity;
     }
 }

@@ -68,7 +68,7 @@ public class WalletsServiceImpl implements IWalletsService {
         if(walletData==null)
             return null;
         // update nohp (or) balance
-        walletData.setNohp(walletsDTO.getNoHP());
+        walletData.setNoHP(walletsDTO.getNoHP());
         walletData.setBalance(walletsDTO.getBalance());
 
         WalletsEntity updateData = walletsRepository.save(walletData);
